@@ -1,12 +1,14 @@
 import React from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
+import Logo from 'public/logo.jpeg'
 
 const Header = () => {
   return (
     <header className="bg-[#1C5567] p-4 px-20 flex justify-between items-center ">
     <div className="flex items-center">
-        <Link href="/"><img
-        src="/logo.jpeg" 
+        <Link href="/"><Image
+        src={Logo}
         alt="Logo"
         className="w-20 h-20 mr-2"
       /></Link>
