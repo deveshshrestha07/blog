@@ -2,7 +2,7 @@
 import Cards from '@/components/Cards'
 import client from '@/sanity/client'
  
-const blog = async() => {
+const blog = async() => {try{
   const res = await client.fetch(`*[_type == "blog"]`);
   console.log(res);
 
@@ -26,7 +26,10 @@ const blog = async() => {
 </section>
 
     </main>
-  )
+  );
+ } catch (error) {
+  console.error('Error fetching blog data:', error);
+  return null; // or handle the error in an appropriate way
 }
-
+}
 export default blog
