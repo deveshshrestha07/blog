@@ -14,9 +14,9 @@ const blog = async() => {try{
   <h1 className="sm:text-3xl text-5xl font-medium title-font mb-4 text-gray-900 text-center">Blogs</h1>
     <div className="flex flex-wrap -m-4 mt-10">
       {
-        res.map(val=>{
+        res.map((val,index)=>{
           return(
-            <Cards views={val.views} comments={val.comments} description={val.description} title={val.title} img={val.image} slug={val.slug.current} />
+            <Cards key={index} views={val.views} comments={val.comments} description={val.description} title={val.title} img={val.image} slug={val.slug.current} />
           )
         })
       }
